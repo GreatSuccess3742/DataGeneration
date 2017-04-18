@@ -1,3 +1,4 @@
+%%%#TeamREM
 %%%1. can customize the strides
 %%%2. can customize the windowsize(image size)
 %%%3. if image size < 500 resize it to 500

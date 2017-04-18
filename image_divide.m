@@ -9,8 +9,8 @@ clear;
 filename = 'show_girl.png';
 
 img = imread(filename);
-window_size = 500;
-stride = 250;
+window_size = 1000;
+stride = 500;
 pivot = [1,1];
 aspect_ratio = size(img);
 
@@ -85,7 +85,7 @@ count = 1;% "count" is used for counting the files
 for i = 1 : num_of_row
     for j = 1 : num_of_col
         token = strtok(filename,'.'); %seperate the filename from its extension
-        output_name = strcat(filename(1:end-4),'_tile_',int2str(count),'.png'); %construct the ouput filename
+        output_name = strcat(filename(1:end-4),'_tile_','row_',int2str(i),'_col_',int2str(j),'.png'); %construct the ouput filename
         imwrite(batch{i,j},output_name,'png');
         count = count + 1;
     end

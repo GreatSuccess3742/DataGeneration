@@ -22,8 +22,8 @@ end
 aspect_ratio = size(img); %refresh aspect ratio after resizing(i.e. ratio change after resizing)
 
 %%% calculate how many tiles are the images divided to
-num_of_row = floor(aspect_ratio(1) / stride);
-num_of_col = floor(aspect_ratio(2) / stride);
+num_of_row = 1 + ceil( (aspect_ratio(1) - window_size) / stride);
+num_of_col = 1 + ceil( (aspect_ratio(2) - window_size) / stride);
 if(num_of_row < 1)
     num_of_row = 1;
 end
